@@ -1,5 +1,5 @@
 # Ideas Bank
-This is just a central place to itemise the ideas that people have towards the contribution of this project.
+This is just a central place to itemize the ideas that people have towards the contribution of this project.
 
 Ideas
 1. I want the ability to be able to get a list of fake names (Both firstname and last name)
