@@ -10,7 +10,7 @@ class DB(object):
         self.db = self.client.faker
 
     def find_people(self):
-        people = self.db.find('people', {})
+        people = self.db.find("people", {})
         people_json = map(lambda p: {
             "firstName": p["first_name"].encode("utf-8"),
             "surname": p["surname"].encode("utf-8"),
@@ -21,4 +21,4 @@ class DB(object):
         return people_json
 
     def save_people(self, data):
-        self.db[people].insert(data)
+        self.db["people"].insert(data)

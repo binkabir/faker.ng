@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/api/v1/faker/people')
 def get_fake_people():    
 
-    dat = Db.find_people
+    dat = DB().find_people()
     resp = Response(json.dumps(dat), status=200, mimetype="application/json")
     return resp
 
