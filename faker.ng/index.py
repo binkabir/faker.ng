@@ -1,14 +1,16 @@
 import json
+from db import DB
 from flask import Flask
 from flask import Response
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():    
 
-    dat = [{"firstName":"Frank", "lastName":"Joel", "email":"j.frank@gmail.com", "phone":"078399382923"}]
+@app.route('/api/v1/faker/people')
+def get_fake_people():    
+
+    dat = Db.find_people
     resp = Response(json.dumps(dat), status=200, mimetype="application/json")
-    return(resp)
+    return resp
 
 if __name__ == '__main__':
     app.run()
