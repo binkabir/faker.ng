@@ -19,3 +19,6 @@ class DB(object):
         }, people)
 
         return people_json
+
+    def save_people(self, data):
+        self.db[people].insert(data)
