@@ -5,6 +5,7 @@ __author__ = 'ozo'
 
 class DB(object):
     def __init__(self):
+        # TODO - db server details needs to be externalised
         self.client = pymongo.MongoClient("localhost", 27017)
         self.db = self.client.faker
 

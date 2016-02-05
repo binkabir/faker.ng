@@ -3,8 +3,8 @@ __author__ = 'ozo'
 
 
 class Parser(object):
-
     def __init__(self):
+        # TODO - The path needs to be externalised
         self.path = '/Users/ozo/iworkspace/faker.ng/faker.ng/sample-data.json'
 
     def parse(self):
