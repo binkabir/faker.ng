@@ -9,8 +9,8 @@ class Parser(object):
 
     def parse(self):
         file = open(self.path, 'r')
-        for line in file:
-            print(line)
+        json_ouput = map(lambda line: json.loads(line), file)
+        print json_ouput
 
 parser = Parser()
 parser.parse()
