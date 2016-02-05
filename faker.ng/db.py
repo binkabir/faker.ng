@@ -1,6 +1,6 @@
-__author__ = 'ozo'
-
 import pymongo
+
+__author__ = 'ozo'
 
 
 class DB(object):
@@ -11,8 +11,8 @@ class DB(object):
     def find_people(self):
         people = self.db.find('people', {})
         people_json = map(lambda p: {
-            "firstName": p["firstName"].encode("utf-8"),
-            "lastName": p["lastName"].encode("utf-8"),
+            "firstName": p["first_name"].encode("utf-8"),
+            "surname": p["surname"].encode("utf-8"),
             "email": p["email"].encode("utf-8"),
             "phone": p["phone"].encode("utf-8"),
         }, people)
