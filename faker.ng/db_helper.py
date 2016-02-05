@@ -8,4 +8,8 @@ def save_people():
     DB().save_people(data)
 
 
-save_people()
+def find_people():
+    people = DB().find_people()
+    print people
+
+find_people()
