@@ -1,6 +1,6 @@
 import pymongo
 
-__author__ = 'ozo'
+__author__ = 'ozo, shuaib'
 
 
 class DB(object):
@@ -19,6 +19,15 @@ class DB(object):
         }, people)
 
         return people_json
+
+    def find_emails(self):
+        emails = self.db.people.find({})
+
+        emails_json = map(lambda p: {
+            "email": p["email"].encode("utf-8")
+        }, emails)
+
+        return emails_json
 
     def save_people(self, data):
         self.db["people"].insert(data)
