@@ -1,9 +1,11 @@
+import os
 import json
 from db import DB
 from flask import Flask
 from flask import Response
 app = Flask(__name__)
 
+PROJECT_PATH = os.path.dirname(os.path.split(os.path.abspath((__file__)))[0]) +  os.path.sep
 
 @app.route('/api/v1/faker/people')
 def get_fake_people():

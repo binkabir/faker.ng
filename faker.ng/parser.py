@@ -1,11 +1,12 @@
 import json
 __author__ = 'ozo'
 
+from index import PROJECT_PATH
 
 class Parser(object):
     def __init__(self):
         # TODO - The path needs to be externalised
-        self.path = '/Users/shuaibafegbua/apps/python/faker.ng/faker.ng/sample-data.json'
+        self.path = PROJECT_PATH + 'sample-data.json'
 
     def parse(self):
         file = open(self.path, 'r')
