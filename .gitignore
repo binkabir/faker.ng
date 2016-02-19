@@ -1,3 +1,5 @@
+*.pyc
+
 app.py
 config.py
 /faker.ng/venv

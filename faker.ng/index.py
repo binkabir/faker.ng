@@ -1,7 +1,7 @@
 import os
 import json
 from db import DB
-from flask import Flask
+from flask import Flask , render_template, url_for, redirect,request
 from flask import Response
 app = Flask(__name__)
 PRODUCTION = False
@@ -10,6 +10,10 @@ if PRODUCTION:
 else:
     PROJECT_PATH = os.path.dirname(os.path.split(os.path.abspath((__file__)))[0]) +  os.path.sep
 
+@app.route('/',methods=['GET'])
+def home():
+    return render_template('index.html')
+    
 @app.route('/api/v1/faker/people')
 def get_fake_people():
 
