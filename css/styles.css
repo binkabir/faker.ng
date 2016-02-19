@@ -1,0 +1,15 @@
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.sidebar {
+    width:22%;
+    min-height: 30rem;
+    background: #00283d;
+}
+
+.content {
+    width: 75%;
+}
