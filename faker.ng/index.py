@@ -1,9 +1,14 @@
+import os
 import json
 from db import DB
 from flask import Flask
 from flask import Response
 app = Flask(__name__)
-
+PRODUCTION = False
+if PRODUCTION:
+    PROJECT_PATH = os.path.split(os.path.abspath((__file__)))[0] +  os.path.sep
+else:
+    PROJECT_PATH = os.path.dirname(os.path.split(os.path.abspath((__file__)))[0]) +  os.path.sep
 
 @app.route('/api/v1/faker/people')
 def get_fake_people():
@@ -34,4 +39,4 @@ def get_num_of_emails(numOfEmails):
     return resp
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
