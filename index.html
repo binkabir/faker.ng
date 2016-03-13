@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Faker NG">
+    <meta name="author" content="Akinlemibola Ibukun, Chika Chukwunta">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Faker NG - Generate Sample Data having Nigerian Names, Email, etc</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+
+  <body data-spy="scroll" data-target="#navbar-example">>
+
+    <header>
+       <nav class="navbar navbar-fixed-top navbar-dark bg-inverse" id="navbar-example">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+            &#9776;</button>
+  <div class="container">
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+    <a class="navbar-brand" href="#home">FakerNG</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#docs">Docs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contribute">Contribute</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+  </div> <!--/container-->
+</nav>
+    </header>
+    <div class="container">
+      <section class="jumbotron text-xs-center" id="about">
+      <div class="container">
+        <h1 class="jumbotron-heading">Faker NG</h1>
+        <p class="lead text-muted">Faker.ng is a read-only web service for generating Nigerian fake data such as names, addresses, and phone numbers. </p>
+        <p>
+          <a href="#" class="btn btn-primary"><i class="fa fa-file-text"></i> About </a>
+          <a href="#" class="btn btn-secondary"><i class="fa fa-book"></i></i> View Docs </a>
+        </p>
+      </div>
+    </section>
+        <div class="row row-offcanvas row-offcanvas-right">
+             <div class="col-xs-12 col-sm-9">
+               <h3 id="docs">Introduction</h3>
+               <p>In January 2016, AbujaDevMeetup members set out to create a data store for Nigeria's local information which can be used anytime sample data is needed as 
+               against the most available ones whose data are usually samples from the west.</p>
+               <p>Faker NG is a simple API that allows you pull sample names, email addresses, phone numbers, etc to populate your database during development</p>
+               <p>It is a simple developer tool that helps you to generate sample data for your application. It is inspired by different Faker packages around. This
+               is specifically aimed and targetted at Nigerian names, email addresses, cities, streets, and general information that will help you speed up and imitate a real 
+               life information used in your application.</p>
+               <p>It's built in Python with Flask using Parse as a data store and returns data in a JSON format e.g. </p>
+               <pre>[{
+                         "surname": "Musa", 
+                         "email": "musa.dinshiya@gmail.com", 
+                         "firstName": "Dinshiya"
+                    }, 
+                    {    "surname": "Essien", 
+                         "email": "essien.abdul@yahoo.com", 
+                         "firstName": "Abdul"
+                    }, 
+                    {    "surname": "Adedeji", 
+                          "email": "adedeji.musa@yahoo.com", 
+                          "firstName": "Musa"
+                    }]
+              </pre>
+               
+               <h3 id="version">Versioning</h3>
+               <p>The API is based at http://faker.abujadevmeetup.com/api/v1/faker</p>
+               <p>It is being continually developed. Changes might not have backward compatibility. You can always access the API using the version number. 
+               e.g. http://faker.abujadevmeetup.com/api/~version-name/faker</p>
+               
+               <h3 id="entity">Entity and Properties</h3>
+               <p>In current Iteration (v1), there is only one entity presently. which is People</p>
+               <p>The properties are:
+                     <ul><li>FirstName - First Name </li>
+                         <li>surname - Surname</li>
+                         <li>Email - Email Address</li>
+                     </ul>
+                  We look forward to adding others such as State of Origin, Tribe, etc
+              </p>
+              
+              <h3 id="endpoints">List of Endpoints</h3>
+              <p>Currently, there are 2 end points:</p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                      <tr>
+                        <th>Endpoint</th>
+                        <th>URI</th>
+                      </tr>
+                      <tr>
+                        <td><strong>People</strong></td>
+                        <td><a href="http://faker.abujadevmeetup.com/api/v1/faker/people">http://faker.abujadevmeetup.com/api/v1/faker/people/<int:numOfPeople></a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Email</strong></td>
+                        <td><a href="http://faker.abujadevmeetup.com/api/v1/faker/email">http://faker.abujadevmeetup.com/api/v1/faker/email/<int:numOfEmail></a></td>
+                      </tr>
+                    </table>
+                </div>
+                
+              <h3 id="examples">Examples</h3>  
+                <p>Few Examples of Use case is stated below. Just GET the URI passed, a JSON data is returned to your application.</p>
+                <p><strong>Getting People</strong></p>
+                To get X number of People,
+                <table class="table table-responsive">
+                  <tr>
+                    <th>Endpoint</th>
+                    <td>people</td>
+                    </tr>
+                    <tr><th>Parameter(s)</th>
+                        <td>Int: numberOfPeople (3)</td>
+                    </tr>
+                    <tr><th>URI</th>
+                        <td>http://faker.abujadevmeetup.com/api/v1/faker/people/3</td>
+                    </tr>
+                  <tr>
+                    <th>Result</th>
+                     <td><pre>[{"surname": "Musa", 
+                     "email": "musa.dinshiya@gmail.com", 
+                     "firstName": "Dinshiya"
+                     },
+                     {"surname": "Essien", 
+                     "email": "essien.abdul@yahoo.com", 
+                     "firstName": "Abdul"
+                     }, 
+                     {"surname": "Adedeji", 
+                     "email": "adedeji.musa@yahoo.com", 
+                     "firstName": "Musa"
+                     }]
+                    </pre>
+                    </td>
+                  </tr>
+                  </table>
+                  <hr>
+                  <p><strong>Getting Only Emails</strong></p>
+                  <br>
+                  <table class="table table-responsive">
+                  <tr>
+                    <th>Endpoint</th>
+                    <td>email</td>
+                  </tr>  
+                  <tr><th>Parameter(s)</th>
+                    <td>Int: numberOfEmail (3)</td>
+                    </tr>
+                    <tr><th>URI</th>
+                        <td>http://faker.abujadevmeetup.com/api/v1/faker/email/3</td>
+                    </tr>
+                    <tr>
+                    <th>Result</th>
+                    <td><pre>[{"email": "musa.dinshiya@gmail.com"}, 
+                    {"email": "essien.abdul@yahoo.com"}, 
+                    {"email": "adedeji.musa@yahoo.com"}
+                    ]
+                      </pre>
+                    </td>
+                  </tr>
+                </table>
+                
+                <h3 id="contribute">Contribute</h3>
+                <p>Found a bug or have an idea?</p>
+                <p>Submit an issue on our <a href="https://github.com/binkabir/faker.ng" target="_blank">github repo</a></p>
+                
+                <h3 id="contact">Contact</h3>
+                <p>If you have any questions/feedback or would like to get in touch with us, send us an email: pr[at]abujadevmeetup[dot]com.</p>
+             </div> <!--/end of column -->
+             
+             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+                       <div class="list-group">
+                         <a href="#about" class="list-group-item active"> About Faker NG</a>
+                         <a href="#version" class="list-group-item"> URI and Versioning</a>
+                         <a href="#entity" class="list-group-item"> Entity and Property</a>
+                         <a href="#endpoints" class="list-group-item"> List of Endpoints</a>
+                         <a href="#examples" class="list-group-item"> Examples</a>
+                         <a href="#contribute" class="list-group-item"> Contribute</a>
+                        <a href="#contact" class="list-group-item"> Contact</a>  
+                       </div>
+             </div>   
+        
+        
+        </div> <!--/row-->
+      
+      
+      <footer class="text-muted">
+      <div class="container">
+        <p class="pull-xs-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>Faker NG is an open-source project initiated by <a href="http://abujadevmeetup.com">AbujaDevMeetup</a></p>
+       
+      </div>
+    </footer>
+    </div> <!--/conttainer-->
+
+    
+
+    
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
+    <script>
+      $("#sidebar").stick_in_parent();
+    </script>
+    
+    <script>
+      $(function () {
+        Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
+      });
+    </script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script>
+      
+(function () {
+  'use strict';
+
+  if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+      document.createTextNode(
+        '@-ms-viewport{width:auto!important}'
+      )
+    )
+    document.head.appendChild(msViewportStyle)
+  }
+
+})();
+    </script>
+  </body>
+</html>
