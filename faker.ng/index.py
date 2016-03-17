@@ -1,9 +1,11 @@
 import os
 import json
 from db import DB
-from flask import Flask , render_template, url_for, redirect,request
+from flask import Flask , render_template, url_for, redirect,request,jsonify
 from flask import Response
+
 app = Flask(__name__)
+app.config.from_pyfile("application.cfg")
 PRODUCTION = False
 if PRODUCTION:
     PROJECT_PATH = os.path.split(os.path.abspath((__file__)))[0] +  os.path.sep
@@ -26,7 +28,7 @@ def get_number_of_people(numOfPeople):
 
     dat = DB().find_people()[:numOfPeople]
     resp = Response(json.dumps(dat), status=200, mimetype="application/json")
-    return resp
+    return jsonify(response = dat)
 
 @app.route('/api/v1/faker/emails')
 def get_emails():

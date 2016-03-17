@@ -1,12 +1,15 @@
 import pymongo
+from flask import current_app as app 
 
-__author__ = 'ozo, shuaib'
+__author__ = 'ozo, shuaib, binkabir'
 
 
 class DB(object):
     def __init__(self):
-        # TODO - db server details needs to be externalised
-        self.client = pymongo.MongoClient("localhost", 27017)
+
+        server = app.config["DB_SERVER"]
+        port = app.config["DB_SERVER_PORT"]
+        self.client = pymongo.MongoClient(server,port)
         self.db = self.client.faker
 
     def find_people(self):
