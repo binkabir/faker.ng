@@ -8,7 +8,7 @@ class DB(object):
     def __init__(self):
 
         server = app.config["DB_SERVER"]
-        port = app.config["DB_SERVER_PORT"]
+        port   = app.config["DB_SERVER_PORT"]
         self.client = pymongo.MongoClient(server,port)
         self.db = self.client.faker
 
