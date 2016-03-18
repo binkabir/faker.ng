@@ -13,12 +13,15 @@ class DB(object):
         self.db = self.client.faker
 
     def find_people(self):
-        people = self.db.people.find({})
+        people = self.db.people2.find({})
 
         people_json = map(lambda p: {
             "firstName": p["first_name"].encode("utf-8"),
             "surname": p["surname"].encode("utf-8"),
-            "email": p["email"].encode("utf-8")
+            "email": p["email"].encode("utf-8"),
+            "sex": p["sex"].encode("utf-8"),
+            "mobile_number": p["mobile_number"].encode("utf-8"),
+            "address": p["address"].encode("utf-8")
         }, people)
 
         return people_json
