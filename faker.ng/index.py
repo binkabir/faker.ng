@@ -30,7 +30,7 @@ def get_number_of_people(numOfPeople = app.config["DEFAULT_QUERY_SIZE"]):
  
     dat = DB().find_people()[:numOfPeople]
     resp = Response(json.dumps(dat), status=200, mimetype="application/json")
-    return jsonify(response = dat)
+    return jsonify(size=len(dat), response = dat)
 
 @app.route('/api/v1/faker/emails')
 def get_emails():
