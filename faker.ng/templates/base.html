@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{{url_for('static' , filename='favicon.ico')}}">
+    <meta name="description" content="Faker NG">
+    <meta name="author" content="Abuja Developers Meetup">
+    <link rel="icon" href="{{url_for('static',  filename='favicon.ico')}}">
 
-    <title>Faker NG 1.0</title>
+    <title>Faker NG - Generate Sample Data having Nigerian Names, Email, etc</title>
 
     <!-- Bootstrap core CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -19,63 +19,62 @@
     <link href="{{url_for('static',  filename='css/styles.css')}}" rel="stylesheet">
   </head>
 
-  <body>
+<body data-spy="scroll" data-target="#navbar-example">
 
-    <header>
-      <nav class="navbar navbar-dark bg-inverse">
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
-    &#9776;
-  </button>
-  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-    <a class="navbar-brand" href="{{url_for('home')}}">FakerNG</a>
-    <ul class="nav navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Documentation</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Support</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-    </header>
-    
-
+     
 {% block content %}
 
 {% endblock %}
 
-
-
-<footer class="text-muted">
+ <footer class="text-muted">
       <div class="container">
         <p class="pull-xs-right">
           <a href="#">Back to top</a>
         </p>
-        <p>Faker NG  &copy; AbujaDevMeetup.</p>
+        <p>Faker NG is an open-source project initiated by <a target="_blank" href="http://abujadevmeetup.com">AbujaDevMeetup</a></p>
        
       </div>
     </footer>
+    </div> <!--/conttainer-->
+
+    
+
+    
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
+    <script>
+      $("#sidebar").stick_in_parent();
+    </script>
+    
     <script>
       $(function () {
         Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
       });
     </script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+      
+(function () {
+  'use strict';
+
+  if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+      document.createTextNode(
+        '@-ms-viewport{width:auto!important}'
+      )
+    )
+    document.head.appendChild(msViewportStyle)
+  }
+
+})();
+    </script>
   </body>
 </html>
