@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config.from_pyfile("application.cfg") #added the configuration params file
 
 api = app.config["API_VERSION"]
-
+import random
 
 PRODUCTION = True
 if PRODUCTION:
@@ -35,6 +35,15 @@ def get_number_of_people(numOfPeople = app.config["DEFAULT_QUERY_SIZE"]):
     dat = DB().find_people()[:numOfPeople]
     resp = Response(json.dumps(dat), status=200, mimetype="application/json")
     return jsonify(size=len(dat), response = dat)
+
+@app.route(api + '/names/')
+@app.route(api + '/names/<int:numOfPeople>')
+def get_number_of_names(numOfPeople = app.config["DEFAULT_QUERY_SIZE"]):
+ 
+    dat = DB().find_names()[:numOfPeople]
+    resp = Response(json.dumps(dat), status=200, mimetype="application/json")
+    return jsonify(size=len(dat), response = dat)
+
 
 @app.route(api + '/emails')
 def get_emails():
