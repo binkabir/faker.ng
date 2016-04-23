@@ -10,7 +10,7 @@ app.config.from_pyfile("application.cfg") #added the configuration params file
 api = app.config["API_VERSION"]
 
 
-PRODUCTION = False
+PRODUCTION = True
 if PRODUCTION:
     PROJECT_PATH = os.path.split(os.path.abspath((__file__)))[0] +  os.path.sep
 else:

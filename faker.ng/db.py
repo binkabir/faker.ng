@@ -7,13 +7,13 @@ __author__ = 'ozo, shuaib, binkabir'
 class DB(object):
     def __init__(self):
 
-        server = app.config["DB_SERVER"]
-        port   = app.config["DB_SERVER_PORT"]
+        server = "localhost"  #app.config["DB_SERVER"]
+        port   = 27017 #app.config["DB_SERVER_PORT"]
         self.client = pymongo.MongoClient(server,port)
         self.db = self.client.faker
 
     def find_people(self):
-        people = self.db.people2.find({})
+        people = self.db.people.find({})
 
         people_json = map(lambda p: {
             "firstName": p["first_name"].encode("utf-8"),
