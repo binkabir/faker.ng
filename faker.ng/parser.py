@@ -6,7 +6,7 @@ from index import PROJECT_PATH
 class Parser(object):
     def __init__(self):
         # TODO - The path needs to be externalised
-        self.path = PROJECT_PATH + 'sample-data.json'
+        self.path = PROJECT_PATH + 'sample-data2.json'
 
     def parse(self):
         file = open(self.path, 'r')
