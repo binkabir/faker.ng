@@ -13,6 +13,8 @@ parser.py
 4. You need to then run index.py: python index.py, this will start the test server on:
 IP - 127.0.0.1, if you are running locally and on port 5000
 
-To test the API visit: http://127.0.0.1:5000/api/v1/faker/people
 sample_api_result
 sample_data_in_mongo_db
+
+FakerNG is now live on faker.abujadevmeetup.com
+To test the API visit:http://faker.abujadevmeetup.com/api/v1/faker/people
