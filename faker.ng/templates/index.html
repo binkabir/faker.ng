@@ -1,25 +1,203 @@
 {% extends 'base.html' %}
 {% block content %}
-    <section class="jumbotron text-xs-center">
+
+
+<header>
+
+       <nav class="navbar navbar-dark" id="navbar-example">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+            &#9776;</button>
+  <div class="container">
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+    <a class="navbar-brand" href="#home">FakerNG</a>
+    <ul class="nav navbar-nav pull-right">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#docs">Docs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contribute">Contribute</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+  </div> <!--/container-->
+</nav>
+
+  <section class="jumbotron text-xs-center" id="about">
       <div class="container">
         <h1 class="jumbotron-heading">Faker NG</h1>
-        <p class="lead text-muted">Faker.ng is a read-only web service for generating Nigerian fake data such as names, addresses, and phone numbers.
-</p>
-<p>Instructions to get up and running locally can be found on the github repo <a href="https://github.com/binkabir/faker.ng.git" target="_blank">https//github.com/binkabir/faker.ng.git</a>
+        <p />
+        <p class="lead text-center">A web service for generating Nigerian fake data such as names, addresses, and phone numbers. </p>
 
-      <p>
-          <a href="#" class="btn btn-primary"><i class="fa fa-download"></i></i> Download</a>
-          <a href="#" class="btn btn-secondary">Secondary action</a>
-        </p>
       </div>
     </section>
+    </header>
 
-    <main >
-      <div class="container-fluid main-content">
-        <div class="sidebar"></div>
-        <div class="content"></div>
-      
-      </div>
-    </main>
 
-   {% endblock %} 
+        <div class="container">
+           <div class="row row-offcanvas row-offcanvas-right">
+             <div class="col-xs-12 col-sm-9">
+               <h3 id="docs">Introduction</h3>
+               <p>In January 2016, AbujaDevMeetup members set out to create a data store for Nigerian local information which can be used as sample data to bootstrap application development.</p>
+               <p>FakerNG is a simple API that allows you to generate sample names, email addresses, phone numbers and addresses.</p>
+               <p>It is inspired by different Faker packages around. This is specifically aimed and targetted at Nigerian names, email addresses, cities, streets, and general information that will help you speed up and imitate a real
+               life information used in your application.</p>
+               <p>It's built with Python (Flask Framework) using MongoDB as a data store and returns data in JSON format e.g. </p>
+               <pre class="prettyprint">
+                 <br/>                   {&quot;first_name&quot;:&quot;Glory&quot;,<br/>                    &quot;email&quot;:&quot;solihu.glory@devmeetup.com&quot;,<br/>                    &quot;surname&quot;:&quot;Solihu&quot;,<br/>                    &quot;sex&quot;:&quot;M&quot;,<br/>                    &quot;address&quot;:&quot;AKORDIWARI COMPOUND OSSAMA TOWN BAYELSA STATE&quot;,<br/>                    &quot;mobile_number&quot;:&quot;08962780416&quot;<br/>                   }<br/>
+              </pre>
+
+               <h3 id="version">Versioning</h3>
+               <p>This is Verson 1 (v1). It is in continuous development. Changes might not have backward compatibility. You can always access the API using the version number.
+               e.g. http://faker.abujadevmeetup.com/api/~version-name/</p>
+
+               <h3 id="entity">Properties</h3>
+               <p>In current version (v1), there is only one entity present. which is People</p>
+               <p>The properties are:
+                     <ul><li>first_name - First Name </li>
+                         <li>surname - Surname </li>
+                         <li>email - Email Address </li>
+                         <li>sex - Gender </li>
+                         <li>address - Address</li>
+                         <li>phone - Phone number</li>
+                     </ul>
+
+              </p>
+
+              <h3 id="endpoints">List of Endpoints</h3>
+              <p>The following endpoints currently exists:</p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                      <tr>
+                        <th>Endpoint</th>
+                        <th>URI</th>
+                      </tr>
+                      <tr>
+                        <td><strong>People</strong></td>
+                        <td><a href="http://faker.abujadevmeetup.com/api/v1/faker/people">http://faker.abujadevmeetup.com/api/v1/faker/people/<int:numOfPeople></a></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Email</strong></td>
+                        <td><a href="http://faker.abujadevmeetup.com/api/v1/faker/emails">http://faker.abujadevmeetup.com/api/v1/faker/emails/<int:numOfEmail></a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Names</strong></td>
+                        <td><a href="http://faker.abujadevmeetup.com/api/v1/faker/emails">http://faker.abujadevmeetup.com/api/v1/faker/names/<int:numOfNames></a></td>
+                      </tr>
+                    </table>
+                </div>
+
+              <h3 id="examples">Examples</h3>
+                <p>Few Examples of Use case is stated below. Just GET the URI passed, a JSON data is returned to your application.</p>
+                <p><strong>Getting People</strong></p>
+                To get X number of People,
+                <table class="table table-responsive">
+                  <tr>
+                    <th>Endpoint</th>
+                    <td>people</td>
+                    </tr>
+                    <tr><th>Parameter(s)</th>
+                        <td>Int: numberOfPeople (3)</td>
+                    </tr>
+                    <tr><th>URI</th>
+                        <td>http://faker.abujadevmeetup.com/api/v1/faker/people/3</td>
+                    </tr>
+                  <tr>
+                    <th>Result</th>
+                     <td><pre>
+                     {&quot;surname&quot;: &quot;Musa&quot;, <br/>
+                     &quot;email&quot;: &quot;musa.dinshiya@gmail.com&quot;, <br/>
+                     &quot;firstName&quot;: &quot;Dinshiya&quot;<br/>
+                      },<br/>
+                    {&quot;surname&quot;: &quot;Essien&quot;, <br/>
+                      &quot;email&quot;: &quot;essien.abdul@yahoo.com&quot;, <br/>
+                      &quot;firstName&quot;: &quot;Abdul&quot;<br/>
+                      }, <br/>
+                      {&quot;surname&quot;: &quot;Adedeji&quot;, <br/>
+                      &quot;email&quot;: &quot;adedeji.musa@yahoo.com&quot;, <br/>
+                      &quot;firstName&quot;: &quot;Musa&quot;<br/>
+                             }
+                    </pre>
+                    </td>
+                  </tr>
+                  </table>
+                  <hr>
+                  <p><strong>Getting Only Emails</strong></p>
+                  <br>
+                  <table class="table table-responsive">
+                  <tr>
+                    <th>Endpoint</th>
+                    <td>email</td>
+                  </tr>
+                  <tr><th>Parameter(s)</th>
+                    <td>Int: numberOfEmail (3)</td>
+                    </tr>
+                    <tr><th>URI</th>
+                        <td>http://faker.abujadevmeetup.com/api/v1/faker/email/3</td>
+                    </tr>
+                    <tr>
+                    <th>Result</th>
+                    <td><pre>
+                    {&quot;email&quot;: &quot;musa.dinshiya@gmail.com&quot;}, <br/>
+                    {&quot;email&quot;: &quot;essien.abdul@yahoo.com&quot;}, <br/>
+                    {&quot;email&quot;: &quot;adedeji.musa@yahoo.com&quot;}<br/>
+                      </pre>
+                    </td>
+                  </tr>
+                </table>
+                <p><strong>Getting Only Names</strong></p>
+                  <br>
+                  <table class="table table-responsive">
+                  <tr>
+                    <th>Endpoint</th>
+                    <td>names</td>
+                  </tr>
+                  <tr><th>Parameter(s)</th>
+                    <td>Int: numberOfNames (3)</td>
+                    </tr>
+                    <tr><th>URI</th>
+                        <td>http://faker.abujadevmeetup.com/api/v1/faker/names/3</td>
+                    </tr>
+                    <tr>
+                    <th>Result</th>
+                    <td><pre>
+                    {&quot;name&quot;: &quot;Musa Dinshiya&quot;}, <br/>
+                    {&quot;name&quot;: &quot;Ossai Vera&quot;}, <br/>
+                    {&quot;name&quot;: &quot;Adedeji Musa&quot;}<br/>
+                      </pre>
+                    </td>
+                  </tr>
+                </table>
+                <h3 id="contribute">Contribute</h3>
+                <p>Found a bug or have an idea?</p>
+                <p>Submit an issue on our <a href="https://github.com/binkabir/faker.ng" target="_blank">github repo</a></p>
+
+                <h3 id="contact">Contact</h3>
+                <p>If you have any questions/feedback or would like to get in touch with us, send us an email: pr@abujadevmeetup.com.</p>
+             </div> <!--/end of column -->
+
+             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+                       <div class="list-group">
+                         <a href="#about" class="list-group-item"> About Faker NG</a>
+                         <a href="#version" class="list-group-item"> URI and Versioning</a>
+                         <a href="#entity" class="list-group-item"> Property</a>
+                         <a href="#endpoints" class="list-group-item"> List of Endpoints</a>
+                         <a href="#examples" class="list-group-item"> Examples</a>
+                         <a href="#contribute" class="list-group-item"> Contribute</a>
+                        <a href="#contact" class="list-group-item"> Contact</a>
+                       </div>
+             </div>
+
+
+        </div> <!--/row-->
+    
+      {% endblock %}

@@ -1,15 +1,96 @@
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+ /**pretty css **/
+ .pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}pre.prettyprint{padding:2px;border:1px solid #888}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}
+ @import url(https://fonts.googleapis.com/css?family=Roboto:400,500|Merriweather+Sans:400,300,700&subset=latin,latin-ext);
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  font-family: 'Roboto', Arial, serif; font-weight: 400;
+  font-size: 16px;
+  }
+p{
+  line-height: 30px;
+  font-size: 1em;
+}  
+
+h1, h2, h3, h4 { font-family: 'Merriweather Sans', Arial, serif; font-weight: 400; }
+
+footer {
+  padding: 30px 0;
 }
 
-.sidebar {
-    width:22%;
-    min-height: 30rem;
-    background: #00283d;
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
+}
+header{
+  background: #03A679;
+}
+a, th{ color: #03A679;
+}
+  .navbar-brand {
+      padding: 5px; /* Increase vertical padding to match navbar links */
+      font-size: 1.2em;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+    
+   
+
+.navbar{
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.content {
-    width: 75%;
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 5px;
+      font-size: 1.1em;
+    }
+
+.jumbotron{
+  background: transparent;
+  color: #fff;
 }
