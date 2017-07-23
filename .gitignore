@@ -1,3 +1,4 @@
+.idea
 *.pyc
 faker.ng/*.pyc
 app.py
