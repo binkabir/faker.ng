@@ -5,3 +5,4 @@ app.py
 config.py
 /faker.ng/venv
 Faker.ng.*
+.DS_Store
